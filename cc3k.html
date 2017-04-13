@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Basic Page Needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <!--[if IE]><meta http-equiv="x-ua-compatible" content="IE=9" /><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Teo Mastronardi</title>
+    <meta name="description" content="Resume Website">
+
+    <meta name="author" content="Teo Mastronardi">
+
+    <!-- Favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css"  href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="font-awesome-4.2.0/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="css/jasny-bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+
+    <!-- Slider
+    ================================================== -->
+    <link href="css/owl.carousel.css" rel="stylesheet" media="screen">
+    <link href="css/owl.theme.css" rel="stylesheet" media="screen">
+
+    <!-- Stylesheet
+    ================================================== -->
+    <link rel="stylesheet" type="text/css"  href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/responsive.css">
+
+
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+    <script type="text/javascript" src="js/modernizr.custom.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div id="contact">
+      <div class="container">
+        <div class="section-title text-center">
+          <div class="section-title">
+            <h2>CC3K</h2>
+            <hr>
+          </div>
+              <p id="about"> This game was implimented for a school project. I worked on this
+                 project with one other student and completed in under two weeks.
+                 The graphics were done in text, and the commands were entered
+                 directly through the command line. Before starting, we developed
+                 a UML and calendar to make sure we completed the task with enough
+                 time to adequatly test our program.</p>
+
+                 <br>
+
+              <p id="about">
+                CC3K utilizes a "Game" class that handles the printing of most outputs (eg.
+                 Player damage, race selection, etc) as well as a variety of other classes that utilize
+                 information passed by the Game (for example, the race input by the player to be
+                 their character) to handle player interactions such as movement and combat. In
+                 more detail, features are implemented as follows:
+              </p>
+
+              <div class="col-md-5">
+                <br>
+                <h4>Graphics Display</h4>
+                <hr>
+
+                <p id="about">
+                  Graphics display is handled using the Observer Pattern and utilizes the Grid,
+                  Subject, Observer, Info, Cell and TextDisplay classes. The grid initializes a vector of
+                  Cells, with each cell knowing its own type in addition to whether it has been
+                  initialized already to some value (eg. An Enemy) and its position on the grid.
+                  TextDisplay displays the grid by reading the type of each Cell and printing a
+                  corresponding symbol (for example, a Cell with Type "Human" prints out "H"). Each
+                  time the Type is updated, the Cell sends a notification to the TextDisplay to update
+                  the corresponding position on the TextDisplay, with updates being made through
+                  the Grid. Separate random checks are used to determine which chamber an object
+                  will be created in, which type the object will have (where relevant, for example,
+                  whether an Enemy will be a Human), and what coordinate the object will be
+                  assigned within the chamber.
+                </p>
+
+                <br>
+                <h4>Objects (Player, Enemies, Potions and Gold)</h4>
+                <hr>
+
+                <p id="about">
+                  Objects are initialized in the Grid, where they are given a Type (a Race for
+                  the Player and Enemies, a normal Type for Potions and Gold that indicates effects
+                  and quantity, respectively) that corresponds with the Type displayed on the
+                  TextDisplay. Objects are created using the Factory Design Pattern, where the Type
+                  is used to indicate the stats to be given to an object. Any "unique" elements for a
+                  given Object are handled using the Type. For example, when a Player drinks a
+                  Potion, a check is made to see whether the Player's Race is Drow. If so, the
+                  Potion's effect is enhanced.
+                </p>
+
+                <br>
+                <h4>Combat</h4>
+                <hr>
+
+                <p id="about">
+                  After initialization, the Enemies and the Player store their own coordinates as
+                  well as their stats (Attack, Defense, Health, etc). To initiate combat, the Player's
+                  coordinates are compared with the coordinates of each enemy in the Enemy Vector
+                  to determine if they are within range to begin fighting. If this is the case, then
+                  combat is initiated between the Player and the Enemy, with the bulk of work being
+                  handled in the Player/Enemy Defend function. An integer dmg is calculated using
+                  the ceiling of 100*(attacker's attack/(100 + defender's defense)), which then
+                  decrements the defender's current HP. If the Player's health goes below zero, the
+                  current game ends. If the Enemy's health goes below zero, the player is provided a
+                  satisfying victory message and their gold is incremented by either 2 or 5.
+                </p>
+
+                <br>
+                <h4>Potions</h4>
+                <hr>
+
+                <p id="about">
+                  The Player holds booleans that indicate knowledge of the effects of potions.
+                  These booleans are initially set to false, but drinking a potion of a given type will
+                  change the boolean indicating knowledge of that type of potion to True. If the Player
+                  attempts to drink a potion that they know the effect of, a prompt appears telling the
+                  Player the type of potion they are about to drink and asks if they wish to continue.
+                </p>
+              </div>
+            <div class="space"></div>
+        </div>
+        <div class="col-md-6">
+        <img src="img/clients/CC3K.png" class="img-responsive" alt="...">
+        <br>
+        <br>
+        <img src="img/clients/movement.png" class="img-responsive" alt="...">
+        <br>
+        <br>
+        <img src="img/clients/attack.png" class="img-responsive" alt="...">
+        <br>
+        <br>
+        <img src="img/clients/potion.png" class="img-responsive" alt="...">
+        </div
+    </div>
+  </div>
+
+  <div id="contact">
+      <div class="container">
+          <div class="section-title text-center">
+            <div class="section-title">
+                <h2>Watopoly</h2>
+                <hr>
+            </div>
+            <p id="about">Just like CC3K, this game was meant to be a school project
+                          that another student and I completed in under two weeks.</p>
+
+          <div class="space"></div>
+          <div class="row">
+             <div class="col-md-9">
+              </div>
+          </div>
+
+      </div>
+  </div>
+</div>
+
+
+
+    <nav id="footer">
+        <div class="container">
+             <div class="pull-left">
+            </div>
+            <div class="pull-right">
+                <a href="#home" class="page-scroll">Back to Top <span class="fa fa-angle-up"></span></a>
+            </div>
+        </div>
+    </nav>
+  </body>
+
+
+</html>
