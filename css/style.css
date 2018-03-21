@@ -61,7 +61,7 @@ a:focus{
 	text-decoration: none;
 }
 #home{
-	background: url(../img/bg1.jpg);
+	background: url(../img/bg5.jpg);
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -74,6 +74,10 @@ a:focus{
 #about{
     text-align: justify;
 }
+#languages{
+    text-align: center;
+}
+
 #home a.down-btn span.fa.fa-angle-down {
 	font-size: 26px;
 	border: 1px solid #c59a6d;
