@@ -55,12 +55,14 @@
             <hr>
           </div>
               <p id="about"> This game was implimented for a school project. I worked on this
-                 project with one other student and completed it in under two weeks.
+                 project with one other student and completed in under two weeks.
                  The graphics were done in text, and the commands were entered
                  directly through the command line. Before starting, we developed
                  a UML and calendar to make sure we completed the task with enough
                  time to adequatly test our program.</p>
-              <br>
+
+                 <br>
+
               <p id="about">
                 CC3K utilizes a "Game" class that handles the printing of most outputs (eg.
                  Player damage, race selection, etc) as well as a variety of other classes that utilize
@@ -73,6 +75,7 @@
                 <br>
                 <h4>Graphics Display</h4>
                 <hr>
+
                 <p id="about">
                   Graphics display is handled using the Observer Pattern and utilizes the Grid,
                   Subject, Observer, Info, Cell and TextDisplay classes. The grid initializes a vector of
@@ -87,6 +90,7 @@
                   whether an Enemy will be a Human), and what coordinate the object will be
                   assigned within the chamber.
                 </p>
+
                 <br>
                 <h4>Objects (Player, Enemies, Potions and Gold)</h4>
                 <hr>
@@ -157,6 +161,7 @@
             </div>
             <p id="about">Just like CC3K, this game was meant to be a school project
                           that another student and I completed in under two weeks.</p>
+
           <div class="space"></div>
           <div class="row">
              <div class="col-md-9">
@@ -169,15 +174,17 @@
 
 
 
-<nav id="footer">
-  <div class="container">
-    <div class="pull-left"></div>
-      <div class="pull-right">
-        <!-- History.back() sends user to where they clicked before link-->
-        <a href="javascript:history.back()" class="page-scroll">Back Home<span class="fa fa-angle-up"></span></a>
-      </div>
-    </div>
-  </nav>
-</body>
+    <nav id="footer">
+        <div class="container">
+             <div class="pull-left">
+            </div>
+            <div class="pull-right">
+              <!-- History.back() sends user to where they clicked before link-->
+                <a href="javascript:history.back()" class="page-scroll">Back Home<span class="fa fa-angle-up"></span></a>
+            </div>
+        </div>
+    </nav>
+  </body>
+
 
 </html>
